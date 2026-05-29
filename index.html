@@ -19,7 +19,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -163,7 +162,6 @@
 
     /* SECTIONS */
     section { padding: 5rem 2rem; }
-
     .container { max-width: 1100px; margin: 0 auto; }
 
     .section-header { text-align: center; margin-bottom: 3.5rem; }
@@ -226,6 +224,18 @@
       box-shadow: 0 12px 40px rgba(108,99,255,0.15);
     }
 
+    .project-card.private {
+      border-style: dashed;
+      opacity: 0.75;
+      cursor: default;
+      pointer-events: none;
+    }
+    .project-card.private:hover {
+      transform: none;
+      box-shadow: none;
+      border-color: var(--border);
+    }
+
     .project-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
 
     .project-icon {
@@ -270,6 +280,25 @@
       background: rgba(251,146,60,0.1);
       color: #fb923c;
       border-color: rgba(251,146,60,0.25);
+    }
+
+    .tag.gray {
+      background: rgba(136,146,164,0.1);
+      color: var(--text-muted);
+      border-color: rgba(136,146,164,0.25);
+    }
+
+    .private-banner {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: rgba(136,146,164,0.08);
+      border: 1px solid rgba(136,146,164,0.2);
+      border-radius: 6px;
+      padding: 0.35rem 0.75rem;
+      width: fit-content;
     }
 
     /* CONTACT */
@@ -347,7 +376,7 @@
     </div>
     <div class="stats">
       <div class="stat">
-        <div class="stat-number">12+</div>
+        <div class="stat-number">14+</div>
         <div class="stat-label">Projects</div>
       </div>
       <div class="stat">
@@ -394,12 +423,17 @@
       <div class="skill-card fade-in">
         <div class="skill-icon">🤖</div>
         <div class="skill-name">Generative AI</div>
-        <div class="skill-desc">LangGraph, LLM pipelines, RAG</div>
+        <div class="skill-desc">LangGraph, LLM pipelines, RAG, Swarm agents</div>
       </div>
       <div class="skill-card fade-in">
         <div class="skill-icon">🐍</div>
         <div class="skill-name">Python Ecosystem</div>
         <div class="skill-desc">PyTorch, scikit-learn, Streamlit, pandas</div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">🎙️</div>
+        <div class="skill-name">Speech & Audio</div>
+        <div class="skill-desc">Whisper, audio transcription & processing</div>
       </div>
     </div>
   </div>
@@ -414,6 +448,40 @@
       <p class="section-desc">A selection of my machine learning and AI projects</p>
     </div>
     <div class="projects-grid">
+
+      <!-- NEW: Swarm Resume -->
+      <a class="project-card fade-in" href="https://github.com/tmartin98/swarm_resume" target="_blank">
+        <div class="project-header">
+          <div class="project-icon" style="background:rgba(108,99,255,0.15)">🐝</div>
+          <span class="project-arrow">↗</span>
+        </div>
+        <div>
+          <div class="project-title">Swarm Resume</div>
+          <div class="project-desc">Multi-agent swarm system for intelligent resume generation and optimization. Agents collaborate to produce tailored, high-quality professional documents.</div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Swarm AI</span>
+          <span class="tag">Gen AI</span>
+        </div>
+      </a>
+
+      <!-- NEW: Transcript by Whisper -->
+      <a class="project-card fade-in" href="https://github.com/tmartin98/transcript_by_whispermodel" target="_blank">
+        <div class="project-header">
+          <div class="project-icon" style="background:rgba(0,212,170,0.12)">🎙️</div>
+          <span class="project-arrow">↗</span>
+        </div>
+        <div>
+          <div class="project-title">Transcript by Whisper Model</div>
+          <div class="project-desc">Automatic speech recognition and transcription tool powered by OpenAI's Whisper model. Supports multiple languages and audio formats.</div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag green">Whisper</span>
+          <span class="tag green">Speech-to-Text</span>
+        </div>
+      </a>
 
       <a class="project-card fade-in" href="https://github.com/tmartin98/ChronoForge_TimeSeries_Analysis" target="_blank">
         <div class="project-header">
@@ -607,6 +675,22 @@
         </div>
       </a>
 
+      <!-- PRIVATE PROJECT -->
+      <div class="project-card private fade-in">
+        <div class="project-header">
+          <div class="project-icon" style="background:rgba(136,146,164,0.1)">🔒</div>
+          <div class="private-banner">🔐 Private Repository</div>
+        </div>
+        <div>
+          <div class="project-title">Confidential Project</div>
+          <div class="project-desc">A private project currently under active development. Details are not publicly available at this time.</div>
+        </div>
+        <div class="project-tags">
+          <span class="tag gray">Private</span>
+          <span class="tag gray">In Progress</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -634,7 +718,6 @@
 </footer>
 
 <script>
-  // Scroll fade-in animation
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
