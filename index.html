@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>tmartin98 – AI & Data Science Portfolio</title>
+  <title>Turcsányi Martin – AI & Data Science Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -344,7 +344,204 @@
     }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
+    /* HERO SUBTITLE */
+    .hero-subtitle {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+    }
+
+    /* BIO */
+    #bio { background: var(--bg); }
+
+    .bio-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .bio-text {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .accomplishments-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .accomplishment-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      transition: border-color 0.2s;
+    }
+    .accomplishment-item:hover { border-color: var(--accent); }
+    .accomplishment-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .accomplishment-text { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* EXPERIENCE */
+    #experience { background: var(--surface); }
+
+    .timeline {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+      padding-left: 0.5rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 21px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2));
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .timeline-dot {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+
+    .timeline-content {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      flex: 1;
+      transition: border-color 0.2s;
+    }
+    .timeline-content:hover { border-color: var(--accent); }
+
+    .timeline-company { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.2rem; }
+    .timeline-meta { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.9rem; }
+    .timeline-role { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .timeline-period { font-size: 0.82rem; color: var(--accent2); }
+    .timeline-sub { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+
+    /* EDUCATION */
+    #education { background: var(--bg); }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .edu-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .edu-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+    .edu-logo {
+      width: 52px; height: 52px;
+      border-radius: 10px;
+      background: var(--surface2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+    .edu-school { font-weight: 700; margin-bottom: 0.25rem; font-size: 0.95rem; }
+    .edu-degree { font-size: 0.88rem; color: var(--accent); font-weight: 500; margin-bottom: 0.15rem; }
+    .edu-faculty { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.2rem; }
+    .edu-period { font-size: 0.8rem; color: var(--text-muted); }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cert-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .cert-card:hover { border-color: var(--accent2); transform: translateY(-3px); }
+
+    .cert-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: rgba(0,212,170,0.1);
+      border: 1px solid rgba(0,212,170,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .cert-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .cert-issuer { font-size: 0.82rem; color: var(--text-muted); }
+    .cert-date { font-size: 0.8rem; color: var(--accent2); margin-top: 0.15rem; }
+
+    /* SKILL CHIPS */
+    .skill-chip {
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      background: rgba(108,99,255,0.07);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      transition: all 0.15s;
+      cursor: default;
+    }
+    .skill-chip:hover { background: rgba(108,99,255,0.18); color: var(--text); border-color: var(--accent); }
+
+    .chip-group-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .chip-group-label:first-child { margin-top: 0; }
+
     /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .bio-layout { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 640px) {
       .nav-links { display: none; }
       .stats { gap: 2rem; }
@@ -358,6 +555,8 @@
   <div class="nav-logo">tmartin98</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -367,9 +566,10 @@
 <!-- HERO -->
 <section class="hero" id="about">
   <div class="hero-content">
-    <div class="hero-badge">🤖 AI & Data Science Engineer</div>
-    <h1>Building intelligent<br/><span>data-driven solutions</span></h1>
-    <p>Passionate about machine learning, computer vision, and NLP. I build end-to-end AI systems — from research to deployment.</p>
+    <div class="hero-badge">🤖 AI Developer & Data Scientist</div>
+    <h1><span>Turcsányi Martin</span></h1>
+    <p class="hero-subtitle">Data Scientist &nbsp;·&nbsp; AI Developer &nbsp;·&nbsp; ML Engineer</p>
+    <p>Over 4 years of specialized experience delivering impactful AI solutions — from multilingual OCR systems and YOLO-based sports analytics to RAG-powered chatbots in high-performance computing environments.</p>
     <div class="hero-buttons">
       <a href="#projects" class="btn btn-primary">View Projects</a>
       <a href="https://github.com/tmartin98" target="_blank" class="btn btn-outline">GitHub Profile ↗</a>
@@ -384,8 +584,144 @@
         <div class="stat-label">ML Domains</div>
       </div>
       <div class="stat">
-        <div class="stat-number">3+</div>
+        <div class="stat-number">4+</div>
         <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section id="bio">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Background & Highlights</h2>
+    </div>
+    <div class="bio-layout">
+      <div class="fade-in">
+        <p class="bio-text">With over 4 years of specialized experience in AI and data science, I bring a strong technical background demonstrated by a proven track record of delivering impactful solutions in high-performance computing environments. My expertise covers the development of multilingual OCR systems, object detection pilots for sports analytics using YOLO models, and deployment of large language model-based chatbots tailored to client operations.</p>
+        <p class="bio-text">Leveraging my skills in synthetic data generation, model training, and evaluation, I have consistently increased workflow efficiency and enabled cost-effective digital innovation. Further bolstered by ongoing MSc studies in Data Science and a robust foundation in business informatics, I am particularly adept at applying advanced analytics, machine learning algorithms, and NLP technologies to solve complex business challenges.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem">
+          <span class="tag" style="padding:0.4rem 0.9rem">AI Developer</span>
+          <span class="tag green" style="padding:0.4rem 0.9rem">Data Scientist</span>
+          <span class="tag orange" style="padding:0.4rem 0.9rem">ML Engineer</span>
+        </div>
+      </div>
+      <ul class="accomplishments-list fade-in">
+        <li class="accomplishment-item">
+          <div class="accomplishment-icon">🌐</div>
+          <div class="accomplishment-text">Developed a large-scale, multilingual OCR system for a Japanese client in a high-performance computing environment.</div>
+        </li>
+        <li class="accomplishment-item">
+          <div class="accomplishment-icon">🏆</div>
+          <div class="accomplishment-text">Created object detection-based pilot projects in the sports domain, optimizing decision-making processes.</div>
+        </li>
+        <li class="accomplishment-item">
+          <div class="accomplishment-icon">💬</div>
+          <div class="accomplishment-text">Designed and implemented RAG-powered chatbots, significantly improving workflow efficiency and reducing operational costs.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Career</div>
+      <h2 class="section-title">Experience</h2>
+      <p class="section-desc">5 years at ITware — from ML intern to AI Developer building production-grade MLOps pipelines</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot">🏢</div>
+        <div class="timeline-content">
+          <div class="timeline-company">ITware</div>
+          <div class="timeline-meta">Budapest, Hungary &nbsp;·&nbsp; 5 years total</div>
+          <div class="timeline-role">AI Developer / Data Scientist</div>
+          <div class="timeline-period">Feb 2022 – Present &nbsp;·&nbsp; 4 yrs 4 mos &nbsp;·&nbsp; Full-time</div>
+          <div class="project-tags" style="margin-top:0.75rem">
+            <span class="tag">Deep Learning</span>
+            <span class="tag">NLP</span>
+            <span class="tag">LLMs</span>
+            <span class="tag green">OCR</span>
+            <span class="tag green">RAG</span>
+            <span class="tag green">MLOps</span>
+            <span class="tag green">Pipeline Design</span>
+            <span class="tag green">Experiment Tracking</span>
+            <span class="tag orange">YOLO</span>
+            <span class="tag orange">Computer Vision</span>
+            <span class="tag orange">HPC / SLURM</span>
+            <span class="tag orange">Python</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">Vector Databases</span>
+            <span class="tag">OpenAI API</span>
+          </div>
+          <div class="timeline-sub">
+            <div class="timeline-role" style="font-size:0.88rem">Machine Learning Intern</div>
+            <div class="timeline-period">Jun 2021 – Jan 2022 &nbsp;·&nbsp; 8 mos &nbsp;·&nbsp; Internship</div>
+            <div class="project-tags" style="margin-top:0.6rem">
+              <span class="tag gray">Python</span>
+              <span class="tag gray">ML Foundations</span>
+              <span class="tag gray">Data Analysis</span>
+              <span class="tag gray">Model Evaluation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & CERTIFICATIONS -->
+<section id="education">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Learning</div>
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card fade-in">
+        <div class="edu-logo">🎓</div>
+        <div>
+          <div class="edu-school">Obuda University</div>
+          <div class="edu-degree">MSc, Data Science</div>
+          <div class="edu-faculty">John von Neumann Faculty of Informatics</div>
+          <div class="edu-period">Sep 2024 – May 2026</div>
+        </div>
+      </div>
+      <div class="edu-card fade-in">
+        <div class="edu-logo">📊</div>
+        <div>
+          <div class="edu-school">Budapest University of Economics and Business</div>
+          <div class="edu-degree">BSc, Business Informatics Technologist</div>
+          <div class="edu-faculty">Business Data Analyst</div>
+          <div class="edu-period">Sep 2018 – Jan 2022</div>
+        </div>
+      </div>
+    </div>
+    <div class="section-header fade-in" style="margin-bottom:2rem">
+      <div class="section-label">Credentials</div>
+      <h2 class="section-title">Licenses & Certifications</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card fade-in">
+        <div class="cert-icon">🔐</div>
+        <div>
+          <div class="cert-name">MLSecOps</div>
+          <div class="cert-issuer">Cubix Institute of Technology</div>
+          <div class="cert-date">Issued Dec 2025</div>
+        </div>
+      </div>
+      <div class="cert-card fade-in">
+        <div class="cert-icon">🤖</div>
+        <div>
+          <div class="cert-name">AI4Dev</div>
+          <div class="cert-issuer">ITware</div>
+          <div class="cert-date">Issued Apr 2025</div>
+        </div>
       </div>
     </div>
   </div>
@@ -436,6 +772,76 @@
         <div class="skill-desc">Whisper, audio transcription & processing</div>
       </div>
     </div>
+
+    <!-- TECHNOLOGIES & TOOLS CHIP CLOUD -->
+    <div style="margin-top:3rem" class="fade-in">
+      <div class="chip-group-label">Languages & Libraries</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+        <span class="skill-chip">Python</span>
+        <span class="skill-chip">Pandas</span>
+        <span class="skill-chip">NumPy</span>
+        <span class="skill-chip">Matplotlib</span>
+        <span class="skill-chip">Seaborn</span>
+        <span class="skill-chip">TensorFlow</span>
+        <span class="skill-chip">Keras</span>
+        <span class="skill-chip">scikit-learn</span>
+        <span class="skill-chip">PyTorch</span>
+        <span class="skill-chip">OpenCV (CV2)</span>
+        <span class="skill-chip">NLTK</span>
+        <span class="skill-chip">spaCy</span>
+        <span class="skill-chip">LangChain</span>
+        <span class="skill-chip">Streamlit</span>
+        <span class="skill-chip">Supervision</span>
+        <span class="skill-chip">SQL</span>
+        <span class="skill-chip">HTML</span>
+        <span class="skill-chip">CSS</span>
+        <span class="skill-chip">JavaScript</span>
+        <span class="skill-chip">Firebase</span>
+      </div>
+      <div class="chip-group-label">AI & Machine Learning</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+        <span class="skill-chip">Deep Learning</span>
+        <span class="skill-chip">Object Detection</span>
+        <span class="skill-chip">YOLO</span>
+        <span class="skill-chip">NLP</span>
+        <span class="skill-chip">Large Language Models</span>
+        <span class="skill-chip">OCR</span>
+        <span class="skill-chip">RAG</span>
+        <span class="skill-chip">Vector Databases</span>
+        <span class="skill-chip">Synthetic Data Generation</span>
+        <span class="skill-chip">Model Training</span>
+        <span class="skill-chip">Model Evaluation</span>
+        <span class="skill-chip">Model Deployment</span>
+        <span class="skill-chip">OpenAI</span>
+        <span class="skill-chip">LLaMA</span>
+        <span class="skill-chip">Annotation</span>
+      </div>
+      <div class="chip-group-label">Data & Analytics</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+        <span class="skill-chip">Data Visualization</span>
+        <span class="skill-chip">PowerBI</span>
+        <span class="skill-chip">SAP SAC</span>
+        <span class="skill-chip">Statistical Analysis</span>
+        <span class="skill-chip">Business Analytics</span>
+        <span class="skill-chip">Data Cleaning</span>
+        <span class="skill-chip">Duplication Removal</span>
+        <span class="skill-chip">Multilingual Projects</span>
+        <span class="skill-chip">Efficiency Optimization</span>
+        <span class="skill-chip">Cost Reduction</span>
+      </div>
+      <div class="chip-group-label">Infrastructure & Tools</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+        <span class="skill-chip">HPC</span>
+        <span class="skill-chip">SLURM</span>
+        <span class="skill-chip">GitLab</span>
+        <span class="skill-chip">GitHub</span>
+        <span class="skill-chip">Confluence</span>
+        <span class="skill-chip">Jira</span>
+        <span class="skill-chip">Draw.io</span>
+        <span class="skill-chip">Figma</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
